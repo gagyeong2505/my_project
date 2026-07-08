@@ -95,10 +95,6 @@ function HeroSection() {
         >
           Portfolio
         </Typography>
-
-        <Typography sx={{ color: 'text.primary', mt: 4, fontSize: { xs: '1rem', md: '1.1rem' } }}>
-          개인 작업물을 소개하는 포트폴리오입니다.
-        </Typography>
       </Box>
     </Box>
   );
