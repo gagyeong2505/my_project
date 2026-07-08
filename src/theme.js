@@ -31,7 +31,7 @@ const theme = createTheme({
     divider: '#D4E8A8',
   },
   typography: {
-    fontFamily: '"Noto Sans KR", "Apple SD Gothic Neo", sans-serif',
+    fontFamily: '"Pretendard Variable", "Pretendard", "Apple SD Gothic Neo", sans-serif',
     h1: {
       fontSize: 'clamp(2.5rem, 7vw, 4.5rem)',
       fontWeight: 700,
