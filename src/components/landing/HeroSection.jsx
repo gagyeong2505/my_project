@@ -1,8 +1,13 @@
 import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import { alpha } from '@mui/material/styles';
+
+const categories = ['UI/UX', 'GRAPHIC', 'BRANDING'];
 
 /**
  * HeroSection 컴포넌트
+ * Behance 케이스 스터디 표지(중앙 스포트라이트 글로우 + 스택형 카테고리 + 스크립트 로고타입) 레이아웃 참고
  *
  * Props: 없음
  *
@@ -13,26 +18,60 @@ function HeroSection() {
   return (
     <Box
       component="section"
-      sx={{
+      sx={(theme) => ({
+        position: 'relative',
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         textAlign: 'center',
-        bgcolor: 'primary.main',
+        overflow: 'hidden',
+        bgcolor: 'primary.dark',
+        backgroundImage: [
+          `radial-gradient(ellipse 55% 42% at 50% 0%, ${alpha(theme.palette.primary.light, 0.55)} 0%, ${alpha(theme.palette.primary.light, 0)} 70%)`,
+          `radial-gradient(ellipse 55% 42% at 50% 100%, ${alpha(theme.palette.primary.light, 0.4)} 0%, ${alpha(theme.palette.primary.light, 0)} 70%)`,
+          `radial-gradient(ellipse 32% 55% at 50% 50%, ${alpha(theme.palette.secondary.main, 0.28)} 0%, ${alpha(theme.palette.secondary.main, 0)} 65%)`,
+        ].join(', '),
         px: 2,
-      }}
+      })}
     >
       <Typography
-        sx={{ fontSize: '0.8125rem', letterSpacing: '0.15em', color: 'text.secondary', mb: 2 }}
+        sx={{ fontSize: '0.8125rem', letterSpacing: '0.3em', color: 'text.secondary', mb: 3 }}
       >
-        UI/UX · GRAPHIC · BRANDING
+        2026
       </Typography>
-      <Typography component="h1" variant="h1">
+
+      <Stack spacing={0.5} sx={{ mb: 5 }}>
+        {categories.map((category) => (
+          <Typography
+            key={category}
+            sx={{
+              fontSize: '0.75rem',
+              fontWeight: 600,
+              letterSpacing: '0.25em',
+              color: 'text.secondary',
+            }}
+          >
+            {category}
+          </Typography>
+        ))}
+      </Stack>
+
+      <Typography
+        component="h1"
+        sx={{
+          fontFamily: '"Pinyon Script", cursive',
+          fontWeight: 400,
+          fontSize: { xs: '4rem', md: '7rem' },
+          lineHeight: 1,
+          color: 'secondary.main',
+        }}
+      >
         Portfolio
       </Typography>
-      <Typography sx={{ color: 'text.primary', mt: 2, fontSize: { xs: '1rem', md: '1.1rem' } }}>
+
+      <Typography sx={{ color: 'text.primary', mt: 4, fontSize: { xs: '1rem', md: '1.1rem' } }}>
         개인 작업물을 소개하는 포트폴리오입니다.
       </Typography>
     </Box>
