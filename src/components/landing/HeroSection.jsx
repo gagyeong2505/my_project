@@ -63,7 +63,7 @@ function HeroSection() {
         sx={{
           fontFamily: '"Pinyon Script", cursive',
           fontWeight: 400,
-          fontSize: { xs: '4rem', md: '7rem' },
+          fontSize: { xs: '6rem', md: '10.5rem' },
           lineHeight: 1,
           color: 'secondary.main',
         }}
